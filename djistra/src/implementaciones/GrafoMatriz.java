@@ -1,5 +1,5 @@
-import implemetaciones.GrafoTDA;
-
+import interfaces.GrafoTDA;
+import interfaces.ConjuntoTDA;
 
 public class GrafoMatriz implements GrafoTDA {
     static int n = 100;
@@ -42,6 +42,16 @@ public class GrafoMatriz implements GrafoTDA {
             i--;
         }
         return i;
+    }
+
+    public ConjuntoTDA Vertices() {
+        ConjuntoTDA Vert = new ConjuntoAR();
+        Vert.InicializarConjunto();
+
+        for(int i = 0; i < cantNodos; i++) {
+            Vert.Agregar(Etiqs[i]);
+        }
+        return Vert;
     }
 
     public void AgregarArista(int v1, int v2, int peso) {
